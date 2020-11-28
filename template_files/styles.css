@@ -5,8 +5,14 @@
 }
 
 body {
-    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b2b2b;
     color: pink;
 }
 
-
+.main{
+    
+}

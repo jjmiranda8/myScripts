@@ -15,3 +15,5 @@ html, css, and js files to start testing out my ideas quickly.
 ## Automate git push
 
 * This script will automate the git process so I can spend more time coding!
+* Added add files to staging via confirmation with status updates
+* Will also add creating repositories, would be nice to connect to github with this feature

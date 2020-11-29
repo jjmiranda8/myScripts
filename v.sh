@@ -11,6 +11,7 @@ echo "p  - push"
 echo "cp - comit and push"
 echo "l  - log oneline"
 echo "b  - branch"
+echo "z  - tezting"
 
 read menuSelection
 
@@ -25,33 +26,28 @@ case $menuSelection in
         git branch
         ;;
     'c')
-
         git add .
+        echo "files added"
+        git status
         echo "Please enter short commit message:"
         read message
         git commit -m "$message"
+        ;;
+    'cp')
+        get add .
+        echo "files added"
+        git status
+        echo "Please enter short commit message:"
+        read message
+        git commit -m "$message"
+        ;;
+    'z')
+        echo "Hello is this working?? Yes!!"
+        ;;
 esac
 
 
 << 'COMMENT'
-echo "Here is your status: "
-
-echo ""
-echo ""
-
-git status
-
-echo ""
-echo ""
-
-echo "Add?"
-read OPTION
-
-
-
-echo ""
-echo ""
-
 if (($OPTION == 'y' || $OPTION == 'Y' || $OPTION == 'yes' || $OPTION == 'YES' || $OPTION == 'Yes'||$OPTION == 'yES')) 
 then
     git add .
@@ -81,6 +77,4 @@ then
 else
     echo "Did not push"
 fi
-
 COMMENT
-

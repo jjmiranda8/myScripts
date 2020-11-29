@@ -12,8 +12,10 @@ file so that I could call on these scripts from anywhere on my machine.
 * This script creates a directory that you name and creates a template with linked
 html, css, and js files to start testing out my ideas quickly.
 
-## Automate git push
+## Automate Version Control 
 
 * This script will automate the git process so I can spend more time coding!
-* Added add files to staging via confirmation with status updates
-* Will also add creating repositories, would be nice to connect to github with this feature
+* Can initialize repos
+* can push with one prompt for small init message. 
+* will be adding current date stamp feature
+

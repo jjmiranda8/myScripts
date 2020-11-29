@@ -10,6 +10,7 @@ echo "  cp - comit and push"
 echo "  l  - log oneline"
 echo "  b  - branch"
 echo "  m  - merge"
+echo "  i  - initialize repo"
 
 read menuSelection
 
@@ -23,63 +24,47 @@ function commit {
     git commit -m "$MESSAGE"
 }
 
+function log {
+    git log --oneline
+}
+
+function push {
+    git push
+}
+
+function branch {
+    git branch 
+}
+
+function init {
+    git init
+}
+
 case $menuSelection in 
-    'p') 
-        git push
+    'c') 
+        commit 
         ;;
-    'l')
-        git log --oneline
-        ;;
-    'b')
-        git branch
-        ;;
-    'c')
-        commit
+    'p')
+        push 
         ;;
     'cp')
         commit
-        git push
+        push
+        ;;
+    'l')
+        log
+        ;;
+    'b')
+        branch
         ;;
     'm')
         git checkout main
-        git branch
+        branch
         echo "Branch to merge to main?"
         read SELECTION
         git merge $SELECTION
         ;;
+    'i')
+        git init
+        ;;
 esac
-
-
-
-
-<< 'COMMENT'
-if (($OPTION == 'y' || $OPTION == 'Y' || $OPTION == 'yes' || $OPTION == 'YES' || $OPTION == 'Yes'||$OPTION == 'yES')) 
-then
-    git add .
-    git status
-
-    echo ""
-    echo ""
-
-    echo "Commit and push changes?"
-    read O
-    if (($O == 'y' || $O == 'Y' || $O == 'yes' || $O == 'YES' || $O == 'Yes'||$O == 'yES')) 
-    then
-        git push .
-        echo "Please enter a small message for the commit."
-        read MESSAGE 
-        
-        echo ""
-        echo ""
-
-        git commit -m "${MESSAGE}"
-        git push
-        echo "Everything pushed and committed"
-        git status
-        git log --oneline
-    fi
-
-else
-    echo "Did not push"
-fi
-COMMENT

@@ -13,6 +13,15 @@ echo "  m  - merge"
 
 read menuSelection
 
+function commit {
+    git add .
+    echo files added
+    git status
+    echo
+    echo Please enter short commit messages:
+    read MESSAGE
+    git commit -m "$MESSAGE"
+}
 
 case $menuSelection in 
     'p') 
@@ -25,12 +34,7 @@ case $menuSelection in
         git branch
         ;;
     'c')
-        git add .
-        echo "files added"
-        git status
-        echo "Please enter short commit message:"
-        read message
-        git commit -m "$message"
+        commit
         ;;
     'cp')
         get add .

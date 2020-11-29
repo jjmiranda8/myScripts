@@ -1,6 +1,4 @@
 #! /usr/bin/bash
-# Think I'll include a menu managed by switch-case to make use of many different
-# git operations.
 git status
 echo
 echo "Automated GIT Version Control"
@@ -14,6 +12,7 @@ echo "  b  - branch"
 echo "  m  - merge"
 
 read menuSelection
+
 
 case $menuSelection in 
     'p') 
@@ -48,8 +47,9 @@ case $menuSelection in
         read SELECTION
         git merge $SELECTION
         ;;
-
 esac
+
+
 
 
 << 'COMMENT'

@@ -37,12 +37,8 @@ case $menuSelection in
         commit
         ;;
     'cp')
-        get add .
-        echo "files added"
-        git status
-        echo "Please enter short commit message:"
-        read message
-        git commit -m "$message"
+        commit
+        git push
         ;;
     'm')
         git checkout main

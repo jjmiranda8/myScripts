@@ -13,15 +13,12 @@ echo "  m  - merge"
 echo "  i  - initialize repo"
 echo "  o  - open file"
 
-read menuSelection
-
 function commit {
     git add .
     echo files added
     git status
     echo
-    echo Please enter short commit messages:
-    read MESSAGE
+    read -p "Please enter short commit message:" MESSAGE
     git commit -m "$MESSAGE"
 }
 
@@ -42,10 +39,12 @@ function init {
 }
 
 function open {
-   echo "File to open:"
-   read FILE
+   read -p "File to open:" FILE
    vi $FILE 
 }
+
+read menuSelection
+
 case $menuSelection in 
     'c') 
         commit 

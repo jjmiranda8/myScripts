@@ -11,6 +11,7 @@ echo "  l  - log oneline"
 echo "  b  - branch"
 echo "  m  - merge"
 echo "  i  - initialize repo"
+echo "  o  - open file"
 
 read menuSelection
 
@@ -40,6 +41,11 @@ function init {
     git init
 }
 
+function open {
+   echo "File to open:"
+   read FILE
+   vi $FILE 
+}
 case $menuSelection in 
     'c') 
         commit 
@@ -60,11 +66,14 @@ case $menuSelection in
     'm')
         git checkout main
         branch
-        echo "Branch to merge to main?"
+        echo "Merge current branch to main?"
         read SELECTION
         git merge $SELECTION
         ;;
     'i')
-        git init
+        init
+        ;;
+    'o')
+        open
         ;;
 esac

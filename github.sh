@@ -1,24 +1,26 @@
 #! /usr/bin/bash
 git status
+
 echo
 echo "Automated GIT Version Control"
 echo "Choose an action:"
 echo
+echo "  i  - initialize repo"
+echo "  l  - log oneline"
 echo "  c  - commit"
 echo "  p  - push"
 echo "  cp - comit and push"
-echo "  l  - log oneline"
 echo "  b  - branch"
-echo "  m  - merge"
-echo "  i  - initialize repo"
 echo "  o  - open file"
+echo "  m  - merge"
 
 function commit {
     git add .
     echo files added
     git status
     echo
-    read -p "Please enter short commit message:" MESSAGE
+    echo "Please enter short commit message:"
+    read MESSAGE
     git commit -m "$MESSAGE"
 }
 
@@ -39,8 +41,17 @@ function init {
 }
 
 function open {
-   read -p "File to open:" FILE
+   echo "File to open"
+   read FILE 
    vi $FILE 
+}
+
+function merge {
+    git checkout main
+    git branch
+    echo "Name of branch merging to main:"
+    read SELECTION
+    git merge $SELECTION
 }
 
 read menuSelection
@@ -63,11 +74,7 @@ case $menuSelection in
         branch
         ;;
     'm')
-        git checkout main
-        branch
-        echo "Merge current branch to main?"
-        read SELECTION
-        git merge $SELECTION
+        merge
         ;;
     'i')
         init

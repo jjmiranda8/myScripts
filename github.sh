@@ -36,7 +36,7 @@ function branch {
     git branch 
 }
 
-function init {
+function initializeRepo {
     git init
 }
 
@@ -77,7 +77,7 @@ case $menuSelection in
         merge
         ;;
     'i')
-        init
+        initializeRepo
         ;;
     'o')
         open

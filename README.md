@@ -21,6 +21,4 @@ html, css, and js files to start testing out my ideas quickly.
 
 ## Practice Data Structures
 
-* Creates repo with source and test files for another ds/algo questions
-* Also creates a file to store solutions
-
+* Creates repo with source and test files for another ds/algo question

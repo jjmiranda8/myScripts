@@ -1,13 +1,12 @@
-#! /user/bin/bash
+#! /usr/bin/bash
 
 echo "Will generate directory you name for data structures practice"
 echo "Enter directoryName: "
-read DIRNAME
+read PROBLEM 
 
-mkdir $DIRNAME
+mkdir $PROBLEM
 
-touch $DIRNAME/prompt.py
-touch $DIRNAME/solution.py
-touch $DIRNAME/source.py
+touch $PROBLEM/$PROBLEM.py
+touch $PROBLEM/test_$PROBLEM.py
 
 

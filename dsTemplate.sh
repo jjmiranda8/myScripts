@@ -11,7 +11,10 @@ cat /home/jmiranda/dataStructures/.template_files/source.py >> $PROBLEM/$PROBLEM
 
 touch $PROBLEM/test_$PROBLEM.py
 cat /home/jmiranda/dataStructures/.template_files/test.py >> $PROBLEM/test_$PROBLEM.py
+
+touch $PROBLEM/prompt.py
+cat /home/jmiranda/dataStructures/.template_files/prompt.py >> $PROBLEM/prompt.py
 cd $PROBLEM
 
 sed -i "1i import $PROBLEM" test_$PROBLEM.py
-printf "   assert $PROBLEM.something() == 'Hello, world'" >> test_$PROBLEM.py
+printf "   assert $PROBLEM.main() == 'Hello, world'" >> test_$PROBLEM.py

@@ -7,13 +7,13 @@ read PROBLEM
 mkdir $PROBLEM
 
 touch $PROBLEM/$PROBLEM.py
-cat /home/jmiranda/dataStructures/.template_files/source.py >> $PROBLEM/$PROBLEM.py
+cat /home/jmiranda/py-ds/.template_files/source.py >> $PROBLEM/$PROBLEM.py
 
 touch $PROBLEM/test_$PROBLEM.py
-cat /home/jmiranda/dataStructures/.template_files/test.py >> $PROBLEM/test_$PROBLEM.py
+cat /home/jmiranda/py-ds/.template_files/test.py >> $PROBLEM/test_$PROBLEM.py
 
 touch $PROBLEM/prompt.py
-cat /home/jmiranda/dataStructures/.template_files/prompt.py >> $PROBLEM/prompt.py
+cat /home/jmiranda/py-ds/.template_files/prompt.py >> $PROBLEM/prompt.py
 cd $PROBLEM
 
 sed -i "1i import $PROBLEM" test_$PROBLEM.py

@@ -2,8 +2,8 @@
 
 echo "Generate template to practice ds/alg question"
 echo "What do you want to name the dir?:"
-read PROBLEM 
 
+read PROBLEM 
 mkdir $PROBLEM
 
 touch $PROBLEM/$PROBLEM.py

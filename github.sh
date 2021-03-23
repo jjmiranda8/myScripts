@@ -1,4 +1,5 @@
 #! /usr/bin/bash
+
 git status
 
 echo
@@ -13,6 +14,8 @@ echo "  cp - comit and push"
 echo "  b  - branch"
 echo "  o  - open file"
 echo "  m  - merge"
+echo "  q  - quit"
+
 
 function commit {
     git add .
@@ -54,32 +57,44 @@ function merge {
     git merge $SELECTION
 }
 
-read menuSelection
+RUNNING=true
+while [ $running==true ] 
+do 
+    read menuSelection
 
-case $menuSelection in 
-    'c') 
-        commit 
-        ;;
-    'p')
-        push 
-        ;;
-    'cp')
-        commit
-        push
-        ;;
-    'l')
-        log
-        ;;
-    'b')
-        branch
-        ;;
-    'm')
-        merge
-        ;;
-    'i')
-        initializeRepo
-        ;;
-    'o')
-        open
-        ;;
-esac
+    case $menuSelection in 
+        'c') 
+            commit 
+            ;;
+        'p')
+            push 
+            ;;
+        'cp')
+            commit
+            wait
+            push
+            ;;
+        'l')
+            log
+            ;;
+        'b')
+            branch
+            ;;
+        'm')
+            merge
+            ;;
+        'i')
+            initializeRepo
+            ;;
+        'o')
+            open
+            ;;
+        'q')
+            echo ""
+            echo "Thanks!"
+            exit 0
+            ;;
+    esac
+done
+
+

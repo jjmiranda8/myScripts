@@ -1,21 +1,21 @@
 #! /usr/bin/bash
 
-git status
-
-echo
-echo "Automated GIT Version Control"
-echo "Choose an action:"
-echo
-echo "  i  - initialize repo"
-echo "  l  - log oneline"
-echo "  c  - commit"
-echo "  p  - push"
-echo "  cp - comit and push"
-echo "  b  - branch"
-echo "  o  - open file"
-echo "  m  - merge"
-echo "  q  - quit"
-
+function menu {
+    echo
+    echo "Automated GIT Version Control"
+    echo "Choose an action:"
+    echo
+    echo "  i  - initialize repo"
+    echo "  l  - log oneline"
+    echo "  c  - commit"
+    echo "  p  - push"
+    echo "  cp - comit and push"
+    echo "  b  - branch"
+    echo "  o  - open file"
+    echo "  m  - merge"
+    echo "  q  - quit"
+    echo ""
+}
 
 function commit {
     git add .
@@ -33,6 +33,8 @@ function log {
 
 function push {
     git push
+    echo ""
+    echo "PUSH COMPLETED"
 }
 
 function branch {
@@ -57,6 +59,10 @@ function merge {
     git merge $SELECTION
 }
 
+
+git status
+menu
+
 RUNNING=true
 while [ $running==true ] 
 do 
@@ -68,6 +74,10 @@ do
             ;;
         'p')
             push 
+            echo
+            echo "PUSH COMPLETED"
+            echo
+            menu
             ;;
         'cp')
             commit

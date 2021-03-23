@@ -13,7 +13,7 @@ function menu {
     echo "  o  - open file"
     echo "  m  - merge"
     echo "  q  - quit"
-    echo ""
+    echo 
 }
 
 function commit {
@@ -61,18 +61,20 @@ function merge {
     git merge $SELECTION
 }
 
-
+#SCRIPT START
 git status
 menu
 
 RUNNING=true
 while [ $running==true ] 
 do 
-    read menuSelection
+    #ADD -a tag to accept input as array
+    read input
 
-    case $menuSelection in 
+    case $input in 
         'c') 
             commit 
+            menu
             ;;
         'p')
             push 
@@ -101,11 +103,9 @@ do
             open
             ;;
         'q')
-            echo ""
+            echo
             echo "Thanks!"
             exit 0
             ;;
     esac
 done
-
-

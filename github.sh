@@ -28,6 +28,9 @@ function commit {
 
 function log {
     git log --oneline
+    echo 
+    echo "END LOG"
+    echo
 }
 
 function push {
@@ -83,6 +86,7 @@ do
             ;;
         'l')
             log
+            menu
             ;;
         'b')
             branch

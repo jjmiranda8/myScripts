@@ -2,7 +2,6 @@
 
 function menu {
     echo
-    echo "Automated GIT Version Control"
     echo "Choose an action:"
     echo
     echo "  i  - initialize repo"
@@ -74,15 +73,13 @@ do
             ;;
         'p')
             push 
-            echo
-            echo "PUSH COMPLETED"
-            echo
             menu
             ;;
         'cp')
             commit
             wait
             push
+            menu
             ;;
         'l')
             log

@@ -30,12 +30,11 @@ function log {
     git log --oneline
     echo 
     echo "END LOG"
-    echo
 }
 
 function push {
     git push
-    echo ""
+    echo 
     echo "PUSH COMPLETED"
 }
 
@@ -45,10 +44,12 @@ function branch {
 
 function initializeRepo {
     git init
+    echo
+    echo "REPO INITIALIZED"
 }
 
 function open {
-   echo "File to open"
+   echo "File to open: "
    read FILE 
    vi $FILE 
 }

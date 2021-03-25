@@ -29,6 +29,6 @@
     #echo Length of the array is: ${#ARRAY[*]}
 
 #SCANNING FILE
-echo -n "Enter the name of the file you would like to scan: "
-read $file_to_scan
-echo "pwd: ${PWD}"
+    # echo -n "Enter the name of the file you would like to scan: "
+    # read $file_to_scan
+    # echo "pwd: ${PWD}"

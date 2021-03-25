@@ -6,6 +6,7 @@ function menu {
     echo
     echo "  i  - initialize repo"
     echo "  l  - log oneline"
+    echo "  fl - full log summary"
     echo "  c  - commit"
     echo "  p  - push"
     echo "  cp - comit and push"
@@ -28,6 +29,12 @@ function commit {
 
 function log {
     git log --oneline
+    echo 
+    echo "END LOG"
+}
+
+function oneLog {
+    git log --oneline -n 1
     echo 
     echo "END LOG"
 }
@@ -63,7 +70,10 @@ function merge {
 }
 
 #SCRIPT START
+echo
 git status
+echo
+git log --oneline -n 1
 menu
 
 RUNNING=true
@@ -85,10 +95,15 @@ do
             commit
             wait
             push
+            wait
             exit 0
             ;;
-        'l')
+        'fl')
             log
+            menu
+            ;;
+        'l')
+            oneLog
             menu
             ;;
         'b')
@@ -106,6 +121,7 @@ do
         'q')
             echo
             echo "Thanks!"
+            echo
             exit 0
             ;;
     esac

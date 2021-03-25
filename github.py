@@ -1,3 +1,7 @@
+#! /usr/bin/env python3
+
+import subprocess as sp
+
 menu_options = {
      "i": "initialize repo",
      "l": "log oneline",
@@ -11,4 +15,30 @@ menu_options = {
      "q": "quit"
 }
 
-print(menu_options.keys())
+p1 = sp.run('ls -la', shell=True, capture_output=True)
+sp.run('clear')
+print(p1.stdout.decode())
+
+def menu:
+    pass
+
+def commit: 
+    pass
+
+def full_log:
+    pass
+
+def last_log:
+    pass
+
+def push:
+    pass
+
+def branch:
+    pass
+
+def initializeRepo:
+    pass
+
+def openFile:
+    pass

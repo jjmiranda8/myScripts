@@ -85,7 +85,7 @@ do
             commit
             wait
             push
-            menu
+            exit 0
             ;;
         'l')
             log

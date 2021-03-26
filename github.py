@@ -9,9 +9,9 @@ menu_options = {
      "c": "commit",
      "p": "push",
      "cp": "comit and push",
-     "b": "branch",
-     "o": "open file",
-     "m": "merge",
+     #"b": "branch",
+     #"o": "open file",
+     #"m": "merge",
      "q": "quit"
 }
 
@@ -20,7 +20,7 @@ menu_options = {
 
 def menu():
     for idx, option in enumerate(menu_options):
-        print(f' {option} - {menu_options[option]}')
+        print(f' {len(option)} - {menu_options[option]}')
     print()
 
 def full_log():
@@ -63,8 +63,8 @@ def initializeRepo():
 def openFile():
     pass
 
-def gitStatus():
-    sp.run('git status -s', shell=True)
+def gitStatus(): 
+    sp.run('git status -s', shell=True, capture_output=True, text=True)
     print()
 
 def gitDifference():

@@ -10,9 +10,10 @@ menu_options = {
      "p": "push",
      "cp": "comit and push",
      #"b": "branch",
-     #"o": "open file",
+     "o": "open file",
      #"m": "merge",
-     "q": "quit"
+     "q": "quit",
+     "ls": "list files"
 }
 
 #######################################################
@@ -20,10 +21,12 @@ menu_options = {
 
 def menu():
     for idx, option in enumerate(menu_options):
-        if len(option) > 1:
+        if len(option) > 2:
             print(f' {option} - {menu_options[option]}')
-        else:
+        elif len(option) == 2:
             print(f' {option}  - {menu_options[option]}')
+        else: 
+            print(f' {option}   - {menu_options[option]}')
 
     print()
 
@@ -74,6 +77,11 @@ def gitStatus():
 def gitDifference():
     sp.run('git diff', shell=True)
 
+def listFiles():
+    print()
+    sp.run('ls', shell=True)
+    print()
+
 #######################################################
 #MAIN
 
@@ -107,3 +115,11 @@ while(RUNNING):
 
     if user_input == 'fl':
         full_log()
+
+    if user_input[0] == 'o':
+        #will be adding autofill for easier access to files in the dir
+        rest = user_input[1::]
+        sp.run(f'vi {rest}', shell=True)
+
+    if user_input == 'ls':
+        listFiles()

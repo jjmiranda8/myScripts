@@ -3,17 +3,17 @@
 import subprocess as sp
 
 menu_options = {
-     "i": "initialize repo",
-     "l": "log oneline",
-     "fl": "full log summary",
-     "c": "commit",
-     "p": "push",
+     "i":  "git init",
+     "l":  "line log",
+     "fl": "full log",
+     "c":  "commit",
+     "p":  "push",
      "cp": "comit and push",
+     "o":  "open file",
+     "ls": "list files",
      #"b": "branch",
-     "o": "open file",
      #"m": "merge",
-     "q": "quit",
-     "ls": "list files"
+     "q": "quit"
 }
 
 #######################################################
@@ -69,6 +69,9 @@ def branch():
 
 def initializeRepo():
     sp.run('git init', shell=True)
+    print()
+    print('INITIALIZED')
+    print()
 
 def openFile():
     pass
@@ -125,3 +128,6 @@ while(RUNNING):
 
     if user_input == 'ls':
         listFiles()
+
+    if user_input == 'i':
+        gitInit()

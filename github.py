@@ -38,7 +38,7 @@ def full_log():
     menu()
 
 def gitInit():
-    sp.run('',shell=True)
+    sp.run('git init',shell=True)
 
 def last_log():
     sp.run('git log --oneline -n 1', shell=True)

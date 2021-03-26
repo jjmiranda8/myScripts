@@ -55,7 +55,7 @@ def push():
     print()
     print('PUSH COMPLETED')
     print()
-    menu()
+    exit()
 
 def commit_and_push():
     commit()

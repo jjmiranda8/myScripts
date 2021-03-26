@@ -37,6 +37,7 @@ def add_all_files():
     sp.run('git add .', shell=True)
 
 def commit(): 
+    gitDifference()
     message = input("Enter a commit message: ")
     formatted_command = f'git commit -m "{message}"'
     add_all_files()
@@ -44,7 +45,10 @@ def commit():
 
 def push():
     sp.run('git push', shell=True)
+    print()
     print('PUSH COMPLETED')
+    print()
+    menu()
 
 def commit_and_push():
     commit()
@@ -62,6 +66,9 @@ def openFile():
 def gitStatus():
     sp.run('git status -s', shell=True)
     print()
+
+def gitDifference():
+    sp.run('git diff', shell=True)
 
 #######################################################
 #MAIN
@@ -85,6 +92,7 @@ while(RUNNING):
         exit()
       
     if user_input == 'c':
+        print()
         commit()
 
     if user_input == 'l':

@@ -77,7 +77,7 @@ def openFile():
     pass
 
 def gitStatus(): 
-    sp.run('git status -s', shell=True, text=True)
+    sp.run('git status', shell=True, text=True)
     print()
 
 def gitDifference():
@@ -92,6 +92,7 @@ def listFiles():
 #MAIN
 
 print()
+print('STATUS:')
 gitStatus()
 print('LAST LOG:')
 last_log()

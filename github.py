@@ -89,7 +89,6 @@ def listFiles():
 #MAIN
 
 print()
-print('STATUS:')
 gitStatus()
 print('LAST LOG:')
 last_log()

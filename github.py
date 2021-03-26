@@ -20,7 +20,11 @@ menu_options = {
 
 def menu():
     for idx, option in enumerate(menu_options):
-        print(f' {len(option)} - {menu_options[option]}')
+        if len(option) > 1:
+            print(f' {option} - {menu_options[option]}')
+        else:
+            print(f' {option}  - {menu_options[option]}')
+
     print()
 
 def full_log():

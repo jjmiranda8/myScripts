@@ -19,26 +19,30 @@ p1 = sp.run('ls -la', shell=True, capture_output=True)
 sp.run('clear')
 print(p1.stdout.decode())
 
-def menu:
+def menu():
+    for idx, option in enumerate(menu_options):
+        print(f'{option} - {menu_options[option]}')
+
+def commit(): 
     pass
 
-def commit: 
+def full_log():
     pass
 
-def full_log:
+def last_log():
     pass
 
-def last_log:
+def push():
     pass
 
-def push:
+def branch():
     pass
 
-def branch:
+def initializeRepo():
     pass
 
-def initializeRepo:
+def openFile():
     pass
 
-def openFile:
-    pass
+
+

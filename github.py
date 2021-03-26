@@ -15,29 +15,35 @@ menu_options = {
      "q": "quit"
 }
 
-#p1 = sp.run('ls -la', shell=True, capture_output=True)
-#sp.run('clear')
-#print(p1.stdout.decode())
+#######################################################
+#METHODS
 
 def menu():
     for idx, option in enumerate(menu_options):
         print(f' {option} - {menu_options[option]}')
+    print()
 
 def full_log():
     pass
 
 def last_log():
-    pass
+    sp.run('git log --oneline -n 1', shell=True)
+
+def add_all_files(): 
+    sp.run('git add .', shell=True)
 
 def commit(): 
     message = input("Enter a commit message: ")
     formatted_command = f'git commit -m "{message}"'
-    sp.run('git add .', shell=True)
+    add_all_files()
     sp.run(formatted_command, shell=True)
-    sp.run('git log --oneline -n 1', shell=True)
 
 def push():
-    pass
+    sp.run('git push', shell=True)
+
+def commit_and_push():
+    commit()
+    push()
 
 def branch():
     pass
@@ -48,16 +54,32 @@ def initializeRepo():
 def openFile():
     pass
 
-#main
-sp.run('git log --oneline -n 1', shell=True)
+def gitStatus():
+    sp.run('git status -s', shell=True)
+
+#######################################################
+#MAIN
+
+print()
+gitStatus()
+last_log()
+print()
 menu()
 
 RUNNING = True
 
 while(RUNNING):
     user_input = input('Please select an option: ')
-    if user_input is 'q':
+    if user_input == 'q':
+        print()
+        print('Thanks!')
         exit()
       
-    if user_input is 'c':
+    if user_input == 'c':
         commit()
+
+    if user_input == 'l':
+        last_log()
+
+    if user_input == 'cp':
+        commit_and_push()

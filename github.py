@@ -24,7 +24,11 @@ def menu():
     print()
 
 def full_log():
-    pass
+    sp.run('git log --oneline', shell=True)
+    print()
+    print('LOG COMPLETE')
+    print()
+    menu()
 
 def last_log():
     sp.run('git log --oneline -n 1', shell=True)
@@ -40,6 +44,7 @@ def commit():
 
 def push():
     sp.run('git push', shell=True)
+    print('PUSH COMPLETED')
 
 def commit_and_push():
     commit()
@@ -49,19 +54,22 @@ def branch():
     pass
 
 def initializeRepo():
-    pass
+    sp.run('git init', shell=True)
 
 def openFile():
     pass
 
 def gitStatus():
     sp.run('git status -s', shell=True)
+    print()
 
 #######################################################
 #MAIN
 
 print()
+print('STATUS:')
 gitStatus()
+print('LAST LOG:')
 last_log()
 print()
 menu()
@@ -70,6 +78,7 @@ RUNNING = True
 
 while(RUNNING):
     user_input = input('Please select an option: ')
+
     if user_input == 'q':
         print()
         print('Thanks!')
@@ -83,3 +92,6 @@ while(RUNNING):
 
     if user_input == 'cp':
         commit_and_push()
+
+    if user_input == 'fl':
+        full_log()

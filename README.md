@@ -9,16 +9,19 @@ file so that I could call on these scripts from anywhere on my machine.
 
 ## Website Template 
 
-* This script creates a directory that you name and creates a template with linked
+* This script creates a directory a template with linked
 html, css, and js files to start testing out my ideas quickly.
+
+* I've recently learned React and will be rethinking this tool. 
 
 ## Automate Version Control 
 
 * This script will automate the git process so I can spend more time coding!
-* Can initialize repos
+* This has been rewritten in python. Bash only supports strings and testing it isn't easy either.  
 * can push with one prompt for small init message. 
 * will be adding current date stamp feature
 
 ## Practice Data Structures
 
+* This is the beginning of a larger web app that I'm planning
 * Creates repo with source and test files for another ds/algo question

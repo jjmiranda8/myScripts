@@ -68,7 +68,7 @@ def openFile():
     pass
 
 def gitStatus(): 
-    sp.run('git status -s', shell=True, capture_output=True, text=True)
+    sp.run('git status -s', shell=True, text=True)
     print()
 
 def gitDifference():

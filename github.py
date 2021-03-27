@@ -11,9 +11,11 @@ menu_options = {
      "cp": "comit and push",
      "o":  "open file",
      "ls": "list files",
+     "s":  "git status",
      #"b": "branch",
      #"m": "merge",
      "q": "quit"
+
 }
 
 #######################################################
@@ -132,3 +134,6 @@ while(RUNNING):
 
     if user_input == 'i':
         gitInit()
+
+    if user_input == 's':
+        gitStatus()

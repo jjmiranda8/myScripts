@@ -10,8 +10,7 @@ file so that I could call on these scripts from anywhere on my machine.
 ## Website Template 
 
 * This script creates a directory a template with linked
-html, css, and js files to start testing out my ideas quickly.
-
+  html, css, and js files to start testing out my ideas quickly.
 * I've recently learned React and will be rethinking this tool. 
 
 ## Automate Version Control 

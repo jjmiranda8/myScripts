@@ -17,4 +17,4 @@ cat /home/jmiranda/py-ds/.template_files/prompt.py >> $PROBLEM/prompt.py
 cd $PROBLEM
 
 sed -i "1i import $PROBLEM" test_$PROBLEM.py
-printf "   assert $PROBLEM.main() == 'Hello, world'" >> test_$PROBLEM.py
+printf "   assert $PROBLEM.main() == 'Hello, jesus'" >> test_$PROBLEM.py

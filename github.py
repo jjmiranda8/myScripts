@@ -49,10 +49,10 @@ def add_all_files():
     sp.run('git add .', shell=True)
 
 def commit(): 
+    add_all_files()
     gitDifference()
     message = input("Enter a commit message: ")
     formatted_command = f'git commit -m "{message}"'
-    add_all_files()
     sp.run(formatted_command, shell=True)
 
 def push():
@@ -137,3 +137,6 @@ while(RUNNING):
 
     if user_input == 's':
         gitStatus()
+
+    if user_input == 'p': 
+        push()

@@ -12,14 +12,14 @@ menu_options = {
      "o":  "open file",
      "ls": "list files",
      "s":  "git status",
-     #"b": "branch",
+     "b": "branch",
      #"m": "merge",
      "q": "quit"
 
 }
 
 #######################################################
-#METHODS
+# function definitions
 
 def menu():
     for idx, option in enumerate(menu_options):
@@ -67,7 +67,7 @@ def commit_and_push():
     push()
 
 def branch():
-    pass
+    sp.run('git branch', shell=True)
 
 def initializeRepo():
     sp.run('git init', shell=True)
@@ -140,3 +140,9 @@ while(RUNNING):
 
     if user_input == 'p': 
         push()
+    
+    if user_input == 'b':
+        branch()
+        
+    else: 
+        print("Please choose from the menu above")

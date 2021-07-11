@@ -105,6 +105,7 @@ RUNNING = True
 
 while(RUNNING):
     user_input = input('Please select an option: ')
+    words_input_array = user_input.split()
 
     if user_input == 'q':
         print()
@@ -124,11 +125,6 @@ while(RUNNING):
     if user_input == 'fl':
         full_log()
 
-    if user_input[0] == 'o':
-        #will be adding autofill for easier access to files in the dir
-        rest = user_input[1::]
-        sp.run(f'vi {rest}', shell=True)
-
     if user_input == 'ls':
         listFiles()
 
@@ -144,5 +140,16 @@ while(RUNNING):
     if user_input == 'b':
         branch()
         
-    else: 
-        print("Please choose from the menu above")
+    if len(words_input_array) > 2:
+        print("Please limit your input to two words")
+        
+    if len(words_input_array) > 1:
+        
+        menu_selection = words_input_array[0]
+        command =        words_input_array[1]
+        
+        if menu_selection == 'o':
+            sp.run(f'code {command}', shell=True)
+            
+        if menu_selection == 'nb':
+            sp.run(f'git checkout -b {command}', shell=True)

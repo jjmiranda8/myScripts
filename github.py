@@ -13,7 +13,10 @@ menu_options = {
      "ls": "list files",
      "s":  "git status",
      "b": "branch",
-     #"m": "merge",
+     "cb": "change branch",
+     "mb": "merge branch",
+     "nb": "new branch",
+     "db": "delete branch",
      "q": "quit"
 
 }

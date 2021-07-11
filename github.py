@@ -6,18 +6,19 @@ menu_options = {
      "i":  "git init",
      "l":  "line log",
      "fl": "full log",
+     "a":  "stage all files",
      "c":  "commit",
      "p":  "push",
      "cp": "comit and push",
      "o":  "open file",
      "ls": "list files",
      "s":  "git status",
-     "b": "branch",
+     "b":  "branch",
      "cb": "change branch",
      "mb": "merge branch",
      "nb": "new branch",
      "db": "delete branch",
-     "q": "quit"
+     "q":  "quit"
 
 }
 
@@ -57,6 +58,7 @@ def commit():
     message = input("Enter a commit message: ")
     formatted_command = f'git commit -m "{message}"'
     sp.run(formatted_command, shell=True)
+    print()
 
 def push():
     sp.run('git push', shell=True)
@@ -78,8 +80,9 @@ def initializeRepo():
     print('INITIALIZED')
     print()
 
-def openFile():
-    pass
+def openFile(file):
+    sp.run(f'code {file}', shell=True)
+    print()
 
 def gitStatus(): 
     sp.run('git status', shell=True, text=True)
@@ -121,6 +124,10 @@ while(RUNNING):
 
     if user_input == 'l':
         last_log()
+        
+    if user_input == 'a':
+        add_all_files()
+        gitStatus()
 
     if user_input == 'cp':
         commit_and_push()
@@ -152,7 +159,7 @@ while(RUNNING):
         command =        words_input_array[1]
         
         if menu_selection == 'o':
-            sp.run(f'code {command}', shell=True)
+            openFile(command)
             
         if menu_selection == 'nb':
             sp.run(f'git checkout -b {command}', shell=True)

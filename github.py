@@ -156,3 +156,9 @@ while(RUNNING):
         
         if menu_selection == 'mb':
             sp.run(f'git merge {command}', shell=True)
+            
+        if menu_selection == 'cb':
+            sp.run(f'git checkout {command}', shell=True)
+        
+        if menu_selection == 'db':
+            sp.run(f'git branch -d {command}', shell=True)
